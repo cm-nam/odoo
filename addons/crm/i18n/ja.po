@@ -332,11 +332,10 @@ msgid ""
 "</p><p>Thank you!</p>\n"
 msgstr ""
 "<p>こんにちは${object.user_id and object.user_id.name or ''},</p>\n"
-"<p>この案件 <strong>${object.name}</strong> ですが、5日間何のアクティビティーがありません。</p>\n"
+"<p>この案件 <strong>${object.name}</strong> につき、ここ5日間何の活動もありませんでした。</p>\n"
 "%if object.description:\n"
-"<p>案件についての説明は次のとおりです : </p><p><i>${object.description}</i>\n"
+"<p>案件の詳細は次のとおりです: </p><p><i>${object.description}</i>\n"
 "%endif\n"
-"</p><p>それでは!</p>\n"
 
 #. module: crm
 #. openerp-web
@@ -948,7 +947,7 @@ msgstr "セールスマネージャは主に次の2つのレポートを使用�
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_base_partner_merge_automatic_wizard_exclude_contact
 msgid "A user associated to the contact"
-msgstr "連絡先に関連付けたユーザー"
+msgstr "連絡先に関連付けたユーザ"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -1428,7 +1427,7 @@ msgstr "カラーインデクス"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Community &amp; Enterprise users:"
-msgstr "コミュニティとエンタープライズユーザー："
+msgstr "コミュニティとエンタープライズユーザ："
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_activity_report_company_id
@@ -1495,7 +1494,7 @@ msgstr "連絡先名"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Contact Us"
-msgstr "私たちに連絡してください。"
+msgstr "お問い合わせ"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_base_partner_merge_automatic_wizard_partner_ids
@@ -2078,7 +2077,7 @@ msgstr "終了期限月"
 msgid ""
 "Explanation text to help users using the star and priority mechanism on "
 "stages or issues that are in this stage."
-msgstr "この段階にあるステージや課題で、スターと優先順位の仕組みを使用した、ユーザーを支援するテキスト。"
+msgstr "この段階にあるステージや課題で、スターと優先順位の仕組みを使用した、ユーザを支援するテキスト。"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_opportunity_report_view_search
@@ -3240,7 +3239,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Online users: we do it for you!"
-msgstr "オンラインユーザー：私たちはあなたのためにそれを行います！"
+msgstr "オンラインユーザ: 私たちはあなたのためにそれを行います！"
 
 #. module: crm
 #: code:addons/crm/wizard/base_partner_merge.py:323
@@ -3628,7 +3627,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Products"
-msgstr "メニュー"
+msgstr "製品"
 
 #. module: crm
 #. openerp-web
@@ -3750,7 +3749,7 @@ msgstr "関連項目"
 #. module: crm
 #: model:ir.actions.server,name:crm.action_email_reminder_lead
 msgid "Reminder to User"
-msgstr "ユーザーにリマインドする"
+msgstr "ユーザにリマインドする"
 
 #. module: crm
 #: model:ir.actions.server,subject:crm.action_email_reminder_lead

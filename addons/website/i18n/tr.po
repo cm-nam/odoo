@@ -16,7 +16,6 @@
 # Ayhan KIZILTAN <akiziltan76@hotmail.com>, 2016
 # ilyas kurt <ilyaskrt19@gmail.com>, 2016
 # Cem Uygur <cemuygur.beb@gmail.com>, 2016
-# selim kartal <kartalselim37@gmail.com>, 2016
 # Ali Zeynel AĞCA <zeynelagca@gmail.com>, 2016
 # gokhun lekesiz <gokhun.lekesiz@rammar.com.tr>, 2016
 # cagri erarslan <cagri.erarslan@mechsoft.com.tr>, 2016
@@ -225,22 +224,22 @@ msgstr ""
 #. module: website
 #: model:ir.actions.act_window,help:website.action_module_theme
 msgid "<b>No theme module found!</b>"
-msgstr ""
+msgstr "<b>Tema modülü bulunamadı!</b>"
 
 #. module: website
 #: model:ir.actions.act_window,help:website.action_module_website
 msgid "<b>No website module found!</b>"
-msgstr ""
+msgstr "<b>Web sitesi modülü bulunamadı!</b>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
 msgid "<b>Set Custom Image...</b>"
-msgstr ""
+msgstr "<b>Özel Resmi Ayarla ...</b>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_sign_in
 msgid "<b>Sign in</b>"
-msgstr ""
+msgstr "<b>Portal</b>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -248,11 +247,13 @@ msgid ""
 "<br/>\n"
 "                                    Make sure the Advanced Options are set to your country and language."
 msgstr ""
+"<br/>\n"
+"Gelişmiş Seçeneklerden ülkenize ve dilinize göre ayarlandığından emin olun."
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
 msgid "<i class=\"fa fa-arrows\"/>Background Image Sizing"
-msgstr ""
+msgstr "<i class=\"fa fa-arrows\"/>Arka Plan Görüntü Boyutlandırma"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
@@ -359,7 +360,7 @@ msgstr "<i class=\"fa fa-th-large\"/> Yapı"
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
 msgid "<i class=\"fa fa-th-large\"/> WEBSITE <b class=\"caret\"/>"
-msgstr ""
+msgstr "<i class=\"fa fa-th-large\"/> WEBSİTESİ <b class=\"caret\"/>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
@@ -522,11 +523,13 @@ msgid ""
 "<span>Contact Us Now</span>\n"
 "                        <i class=\"fa fa-chevron-right\"/>"
 msgstr ""
+"<span>Şimdi Bize Ulaşın</span>\n"
+"<i class=\"fa fa-chevron-right\"/>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_share
 msgid "<span>Share</span>"
-msgstr ""
+msgstr "<span>Paylaş</span>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -601,12 +604,12 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Contact Form</strong>"
-msgstr ""
+msgstr "<strong>İletişim Formu</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Discuss live</strong>"
-msgstr ""
+msgstr "<strong>Canlı tartışın</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -620,12 +623,12 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
 msgid "<strong>Error message:</strong>"
-msgstr ""
+msgstr "<strong>Hata mesajı:</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Event Tickets</strong>"
-msgstr ""
+msgstr "<strong>Etkinlik Biletleri</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -704,7 +707,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Send mass mails</strong>"
-msgstr ""
+msgstr "<strong>Toplu mail gönder</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -716,7 +719,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Subscriptions</strong>"
-msgstr "<strong>Üyelikler</strong>"
+msgstr "<strong>Abonelikler</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -758,7 +761,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>eCommerce</strong>"
-msgstr ""
+msgstr "<strong>e-Ticaret</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -873,7 +876,7 @@ msgstr "Büyük bir slogan ekle"
 #: code:addons/website/static/src/xml/website.gallery.xml:18
 #, python-format
 msgid "Add images"
-msgstr ""
+msgstr "Resim ekle"
 
 #. module: website
 #. openerp-web
@@ -1204,7 +1207,7 @@ msgstr ""
 #. module: website
 #: model:ir.model,name:website.model_res_company
 msgid "Companies"
-msgstr "Şirketler"
+msgstr "Firmalar"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_company_id
@@ -1842,7 +1845,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "GoDaddy"
-msgstr ""
+msgstr "GoDaddy"
 
 #. module: website
 #. openerp-web
@@ -2948,7 +2951,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
 msgid "Send <span class=\"fa fa-long-arrow-right\"/>"
-msgstr ""
+msgstr "Gönder <span class=\"fa fa-long-arrow-right\"/>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
@@ -3024,7 +3027,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.view_website_config_settings
 msgid "Speed"
-msgstr ""
+msgstr "Hız"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
@@ -3054,7 +3057,7 @@ msgstr "Statik"
 #: code:addons/website/static/src/js/website.snippets.editor.js:44
 #, python-format
 msgid "Stay on this page"
-msgstr ""
+msgstr "Bu sayfada kal"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.footer_custom
@@ -3352,7 +3355,7 @@ msgstr "Twitter Hesabı"
 #. module: website
 #: model:ir.ui.view,arch_db:website.snippet_options
 msgid "Type"
-msgstr "tip"
+msgstr "Tür"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.500
@@ -3395,7 +3398,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website.publish_short
 #, python-format
 msgid "Unpublished"
-msgstr ""
+msgstr "Yayınlanmayan"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3452,7 +3455,7 @@ msgstr ""
 #: code:addons/website/static/src/xml/website.backend.xml:45
 #, python-format
 msgid "User Documentation"
-msgstr ""
+msgstr "Kullanıcı Belgeleri"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.robots
@@ -3635,7 +3638,7 @@ msgstr "Web Sitesi"
 #. module: website
 #: model:ir.actions.act_window,name:website.action_module_theme
 msgid "Website Theme"
-msgstr ""
+msgstr "Web Sitesi Teması"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_blog_post_website_url
@@ -3911,7 +3914,7 @@ msgstr ""
 #: model:ir.actions.act_window,help:website.action_module_theme
 #: model:ir.actions.act_window,help:website.action_module_website
 msgid "You should try other search criteria."
-msgstr ""
+msgstr "Başka bir arama kriteri denemelisiniz."
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_banner

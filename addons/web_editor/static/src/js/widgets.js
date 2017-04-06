@@ -295,7 +295,9 @@ var ImageDialog = Widget.extend({
             self.display_attachments();
         });
         this.fetch_existing().then(function () {
-            self.set_image(_.find(self.records, function (record) { return record.url === o.url;}) || o);
+            if (o.url) {
+                self.set_image(_.find(self.records, function (record) { return record.url === o.url;}) || o);
+            }
         });
         return res;
     },
@@ -562,6 +564,7 @@ var getCssSelectors = function (filter) {
                             if (!data) {
                                 data = [match[1], rules[r].cssText.replace(/(^.*\{\s*)|(\s*\}\s*$)/g, ''), clean, [clean]];
                             } else {
+                                data[0] += (", " + match[1]);
                                 data[3].push(clean);
                             }
                         }

@@ -836,9 +836,6 @@ class expression(object):
                     new_leaf = create_substitution_leaf(leaf, dom_leaf, model)
                     push(new_leaf)
 
-            elif path[0] in MAGIC_COLUMNS:
-                push_result(leaf)
-
             # ----------------------------------------
             # PATH SPOTTED
             # -> many2one or one2many with _auto_join:
@@ -923,19 +920,23 @@ class expression(object):
             elif field.type == 'one2many':
                 call_null = True
 
+                domain = field.domain
+                if callable(domain):
+                    domain = domain(model)
+                is_integer_m2o = comodel._fields[field.inverse_name].type == 'integer'
                 if right is not False:
                     if isinstance(right, basestring):
                         op = {'!=': '=', 'not like': 'like', 'not ilike': 'ilike'}.get(operator, operator)
-                        domain = field.domain
-                        if callable(domain):
-                            domain = domain(model)
                         ids2 = [x[0] for x in comodel.name_search(right, domain or [], op, limit=None)]
                         if ids2:
                             operator = 'not in' if operator in NEGATIVE_TERM_OPERATORS else 'in'
-                    elif isinstance(right, collections.Iterable):
-                        ids2 = right
                     else:
-                        ids2 = [right]
+                        if isinstance(right, collections.Iterable):
+                            ids2 = right
+                        else:
+                            ids2 = [right]
+                        if ids2 and is_integer_m2o and domain:
+                            ids2 = comodel.search([('id', 'in', ids2)] + domain).ids
 
                     if not ids2:
                         if operator in ['like', 'ilike', 'in', '=']:
@@ -948,7 +949,9 @@ class expression(object):
                             ids1 = select_from_where(cr, field.inverse_name, comodel._table, 'id', ids2, operator)
                         else:
                             recs = comodel.browse(ids2).sudo().with_context(prefetch_fields=False)
-                            ids1 = recs.mapped(field.inverse_name).ids
+                            ids1 = recs.mapped(field.inverse_name)
+                            if not is_integer_m2o:
+                                ids1 = ids1.ids
                         if ids1:
                             call_null = False
                             o2m_op = 'not in' if operator in NEGATIVE_TERM_OPERATORS else 'in'
@@ -960,7 +963,18 @@ class expression(object):
 
                 if call_null:
                     o2m_op = 'in' if operator in NEGATIVE_TERM_OPERATORS else 'not in'
-                    push(create_substitution_leaf(leaf, ('id', o2m_op, select_distinct_from_where_not_null(cr, field.inverse_name, comodel._table)), model))
+                    # determine ids from field.inverse_name
+                    if comodel._fields[field.inverse_name].store and not (is_integer_m2o and domain):
+                        ids1 = select_distinct_from_where_not_null(cr, field.inverse_name, comodel._table)
+                    else:
+                        comodel_domain = [(field.inverse_name, '!=', False)]
+                        if is_integer_m2o and domain:
+                            comodel_domain += domain
+                        recs = comodel.search(comodel_domain).sudo().with_context(prefetch_fields=False)
+                        ids1 = recs.mapped(field.inverse_name)
+                        if not is_integer_m2o:
+                            ids1 = ids1.ids
+                    push(create_substitution_leaf(leaf, ('id', o2m_op, ids1), model))
 
             elif field.type == 'many2many':
                 rel_table, rel_id1, rel_id2 = field.relation, field.column1, field.column2
@@ -1134,8 +1148,8 @@ class expression(object):
         # final sanity checks - should never fail
         assert operator in (TERM_OPERATORS + ('inselect', 'not inselect')), \
             "Invalid operator %r in domain term %r" % (operator, leaf)
-        assert leaf in (TRUE_LEAF, FALSE_LEAF) or left in model._fields \
-            or left in MAGIC_COLUMNS, "Invalid field %r in domain term %r" % (left, leaf)
+        assert leaf in (TRUE_LEAF, FALSE_LEAF) or left in model._fields, \
+            "Invalid field %r in domain term %r" % (left, leaf)
         assert not isinstance(right, BaseModel), \
             "Invalid value %r in domain term %r" % (right, leaf)
 
